@@ -1,0 +1,31 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  database: test_activeadmin
+  username: root
+  password:
+  host: localhost
+  timeout: 5000
+  ssl_mode: :disabled
+  sslverify: false
+
+development:
+  <<: *default
+
+int:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
+
+test: &test
+  <<: *default
+  database: test_activeadmin_test
+
+cucumber:
+  <<: *test
+cucumber:
+  <<: *test
